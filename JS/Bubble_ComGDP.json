@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bubble chart showing energy consumption per capita vs GDP, excluding AUS, with bubble size representing population and color representing jurisdiction.",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YushanLinMonash/3179_W9HW/refs/heads/main/data/Filtered_Energy_Statistics.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "State_selection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+        "labels": ["All", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+        "name": "State: "
+      }
+    },
+    {
+      "name": "Year_selection",
+      "value": 2012,
+      "bind": {
+        "input": "range",
+        "min": 2004,
+        "max": 2012,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "State_selection == 'All' ? datum.Jurisdiction != 'AUS' : datum.Jurisdiction == State_selection"
+    },
+    {
+      "filter": "year(datum.Year) <= Year_selection"
+    },
+    {
+      "pivot": "Measure",
+      "value": "Quantity",
+      "groupby": ["Year", "Jurisdiction"]
+    },
+    {
+      "calculate": "datum['Energy consumption'] / datum['Energy consumption per capita']", 
+      "as": "Population"
+    }
+  ],
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Energy consumption per capita",
+      "type": "quantitative",
+      "title": "Energy Consumption per Capita (GJ/person)",
+      "scale": {"domain": [0, 600]}
+    },
+    "y": {
+      "field": "GDP",
+      "type": "quantitative",
+      "title": "GDP ($ million)",
+      "scale": {"domain": [0, 850000]}
+    },
+    "size": {
+      "field": "Population",
+      "type": "quantitative",
+      "title": "Population"
+    },
+    "color": {
+      "field": "Jurisdiction",
+      "type": "nominal",
+      "title": "State"
+    },
+    "tooltip": [
+      {"field": "Year", "title": "Year"},
+      {"field": "Jurisdiction", "title": "State"},
+      {"field": "Energy consumption per capita", "title": "Energy Consumption per Capita (GJ/person)"},
+      {"field": "GDP", "title": "GDP ($ million)"},
+      {"field": "Population", "title": "Population"}
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+Jurisdiction,Year,Unit,Quantity
+Australia,2000,PJ,5011.8
+Australia,2001,PJ,5097.0
+Australia,2002,PJ,5138.674
+Australia,2003,PJ,5284.727
+Australia,2004,PJ,5399.2
+Australia,2005,PJ,5546.742
+Australia,2006,PJ,5723.991
+Australia,2007,PJ,5738.33
+Australia,2008,PJ,5844.233
+Australia,2009,PJ,5823.803
+Australia,2010,PJ,5902.889
+Australia,2011,PJ,5888.427
+Australia,2012,PJ,5916.732
+Australia,2013,PJ,5870.951
+Australia,2014,PJ,5898.418
+Australia,2015,PJ,6034.872
+Australia,2016,PJ,6104.651
+Australia,2017,PJ,6168.093
+Australia,2018,PJ,6188.282
+Australia,2019,PJ,6001.048
+Australia,2020,PJ,5769.218
+Australia,2021,PJ,5765.137
+Australia,2022,PJ,5882.206
+New South Wales,2000,PJ,1450.5
+New South Wales,2001,PJ,1445.7
+New South Wales,2002,PJ,1510.475
+New South Wales,2003,PJ,1574.793
+New South Wales,2004,PJ,1544.916
+New South Wales,2005,PJ,1545.985
+New South Wales,2006,PJ,1568.894
+New South Wales,2007,PJ,1610.708
+New South Wales,2008,PJ,1593.538
+New South Wales,2009,PJ,1645.288
+New South Wales,2010,PJ,1668.025
+New South Wales,2011,PJ,1621.305
+New South Wales,2012,PJ,1568.427
+New South Wales,2013,PJ,1526.538
+New South Wales,2014,PJ,1478.836
+New South Wales,2015,PJ,1524.256
+New South Wales,2016,PJ,1533.049
+New South Wales,2017,PJ,1564.673
+New South Wales,2018,PJ,1555.625
+New South Wales,2019,PJ,1477.818
+New South Wales,2020,PJ,1401.642
+New South Wales,2021,PJ,1374.387
+New South Wales,2022,PJ,1439.191
+Northern Territory,2000,PJ,73.2
+Northern Territory,2001,PJ,73.4
+Northern Territory,2002,PJ,56.783
+Northern Territory,2003,PJ,58.655
+Northern Territory,2004,PJ,61.536
+Northern Territory,2005,PJ,72.998
+Northern Territory,2006,PJ,82.787
+Northern Territory,2007,PJ,95.995
+Northern Territory,2008,PJ,95.044
+Northern Territory,2009,PJ,94.174
+Northern Territory,2010,PJ,99.786
+Northern Territory,2011,PJ,98.194
+Northern Territory,2012,PJ,100.156
+Northern Territory,2013,PJ,99.141
+Northern Territory,2014,PJ,83.987
+Northern Territory,2015,PJ,83.919
+Northern Territory,2016,PJ,83.32
+Northern Territory,2017,PJ,90.161
+Northern Territory,2018,PJ,133.022
+Northern Territory,2019,PJ,146.499
+Northern Territory,2020,PJ,145.341
+Northern Territory,2021,PJ,149.773
+Northern Territory,2022,PJ,129.592
+Queensland,2000,PJ,1020.0
+Queensland,2001,PJ,1057.8
+Queensland,2002,PJ,1064.037
+Queensland,2003,PJ,1081.105
+Queensland,2004,PJ,1225.086
+Queensland,2005,PJ,1279.525
+Queensland,2006,PJ,1328.997
+Queensland,2007,PJ,1289.546
+Queensland,2008,PJ,1345.729
+Queensland,2009,PJ,1294.384
+Queensland,2010,PJ,1249.598
+Queensland,2011,PJ,1314.818
+Queensland,2012,PJ,1334.792
+Queensland,2013,PJ,1338.862
+Queensland,2014,PJ,1436.133
+Queensland,2015,PJ,1464.555
+Queensland,2016,PJ,1531.887
+Queensland,2017,PJ,1548.429
+Queensland,2018,PJ,1529.509
+Queensland,2019,PJ,1486.306
+Queensland,2020,PJ,1442.618
+Queensland,2021,PJ,1428.315
+Queensland,2022,PJ,1441.742
+South Australia,2000,PJ,329.3
+South Australia,2001,PJ,328.1
+South Australia,2002,PJ,357.298
+South Australia,2003,PJ,371.539
+South Australia,2004,PJ,355.551
+South Australia,2005,PJ,350.118
+South Australia,2006,PJ,375.46
+South Australia,2007,PJ,372.533
+South Australia,2008,PJ,357.225
+South Australia,2009,PJ,343.727
+South Australia,2010,PJ,342.809
+South Australia,2011,PJ,307.665
+South Australia,2012,PJ,356.279
+South Australia,2013,PJ,337.065
+South Australia,2014,PJ,356.925
+South Australia,2015,PJ,316.387
+South Australia,2016,PJ,287.382
+South Australia,2017,PJ,334.653
+South Australia,2018,PJ,324.507
+South Australia,2019,PJ,317.704
+South Australia,2020,PJ,308.734
+South Australia,2021,PJ,301.274
+South Australia,2022,PJ,300.001
+Tasmania,2000,PJ,93.6
+Tasmania,2001,PJ,97.2
+Tasmania,2002,PJ,99.5
+Tasmania,2003,PJ,103.4
+Tasmania,2004,PJ,107.395
+Tasmania,2005,PJ,111.574
+Tasmania,2006,PJ,113.322
+Tasmania,2007,PJ,115.507
+Tasmania,2008,PJ,113.795
+Tasmania,2009,PJ,113.744
+Tasmania,2010,PJ,113.825
+Tasmania,2011,PJ,106.97
+Tasmania,2012,PJ,112.322
+Tasmania,2013,PJ,108.002
+Tasmania,2014,PJ,104.927
+Tasmania,2015,PJ,107.059
+Tasmania,2016,PJ,107.463
+Tasmania,2017,PJ,110.54
+Tasmania,2018,PJ,108.161
+Tasmania,2019,PJ,100.079
+Tasmania,2020,PJ,103.108
+Tasmania,2021,PJ,105.375
+Tasmania,2022,PJ,105.451
+Victoria,2000,PJ,1337.2
+Victoria,2001,PJ,1371.9
+Victoria,2002,PJ,1330.624
+Victoria,2003,PJ,1364.902
+Victoria,2004,PJ,1356.513
+Victoria,2005,PJ,1429.476
+Victoria,2006,PJ,1433.859
+Victoria,2007,PJ,1426.079
+Victoria,2008,PJ,1421.679
+Victoria,2009,PJ,1426.739
+Victoria,2010,PJ,1448.557
+Victoria,2011,PJ,1457.312
+Victoria,2012,PJ,1425.302
+Victoria,2013,PJ,1394.779
+Victoria,2014,PJ,1392.271
+Victoria,2015,PJ,1414.792
+Victoria,2016,PJ,1384.789
+Victoria,2017,PJ,1309.98
+Victoria,2018,PJ,1276.267
+Victoria,2019,PJ,1207.708
+Victoria,2020,PJ,1128.83
+Victoria,2021,PJ,1148.131
+Victoria,2022,PJ,1172.601
+Western Australia,2000,PJ,708.1
+Western Australia,2001,PJ,722.9
+Western Australia,2002,PJ,719.958
+Western Australia,2003,PJ,730.333
+Western Australia,2004,PJ,748.204
+Western Australia,2005,PJ,757.067
+Western Australia,2006,PJ,820.67
+Western Australia,2007,PJ,827.963
+Western Australia,2008,PJ,917.222
+Western Australia,2009,PJ,905.748
+Western Australia,2010,PJ,980.289
+Western Australia,2011,PJ,982.163
+Western Australia,2012,PJ,1019.454
+Western Australia,2013,PJ,1066.564
+Western Australia,2014,PJ,1045.337
+Western Australia,2015,PJ,1123.903
+Western Australia,2016,PJ,1176.761
+Western Australia,2017,PJ,1209.656
+Western Australia,2018,PJ,1261.191
+Western Australia,2019,PJ,1264.935
+Western Australia,2020,PJ,1238.945
+Western Australia,2021,PJ,1257.883
+Western Australia,2022,PJ,1293.628

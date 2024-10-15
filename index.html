@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/YushanLinMonash/3179_A2_critique/refs/heads/main/style.css" media="all">
+
+</head>
+<body style="background-color: #FFFF;">
+  <div class="main-container">
+      <h1>Australia Energy Consumption</h1>
+      <h3>Visual analysis of energy consumption and related economic data in Australia</h3>
+      <br>
+  
+      <!-- First Graph -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4>Map: Electricity Income by State</h4>
+        </div>
+        <div id="choropleth_map"></div>
+        <p class="body">The map visualizes electricity income by state in Australia, with a color scale representing the income levels. States with higher income are darker.</p>
+      </div>
+      
+      <!-- Second Graph -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4>Bubble Chart: Energy Consumption vs GDP</h4>
+        </div>
+        <div id="bubbleplot1"></div>
+        <p class="body">This graph shows energy consumption per capita vs. GDP across Australian states. The bubble size represents population, and the color represents the state.</p>
+      </div>
+
+      <!-- Third Graph -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4>Bubble Plot: Another Visualization</h4>
+        </div>
+        <div id="bubbleplot2"></div>
+        <p class="body">This bubble plot provides additional insights into energy consumption data.</p>
+      </div>
+    
+    <h5>References:</h5>
+    <p>
+      <a href="https://www.eia.gov/todayinenergy/detail.php?id=53959#:~:text=China%20has%20steadily%20increased%20its">China increased electricity generation annually from 2000 to 2020</a><br>
+      <a href="https://www.energy.gov.au/publications/australian-energy-update-2024">Australian Energy Update 2024, Publisher Department of Climate Change, Energy, the Environment and Water Date RELEASEDWednesday 28 August 2024</a><br>
+    </p>
+
+    <h5>FIT3179 A2 - Yushan Lin 33054754</h5>
+  </div>
+  
+  <script type="text/javascript">
+    // First Graph (Map)
+    var spec1 = "https://raw.githubusercontent.com/YushanLinMonash/3179_A2_critique/refs/heads/main/Map.json";
+    vegaEmbed('#choropleth_map', spec1, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Second Graph (Bubble Chart)
+    var spec2 = "https://raw.githubusercontent.com/YushanLinMonash/3179_A2_critique/refs/heads/main/Bubble_ComGDP.json";
+    vegaEmbed('#bubbleplot1', spec2, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Third Graph (Bubble Plot)
+    var spec3 = "https://raw.githubusercontent.com/30374669/FIT3179A2/refs/heads/main/js/bubbleplot.vg.json";
+    vegaEmbed('#bubbleplot2', spec3, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+  </script>
+</body>
+</html>
