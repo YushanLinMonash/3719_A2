@@ -1,27 +1,4 @@
 Jurisdiction,Year,Unit,Quantity
-Australia,2000,PJ,5011.8
-Australia,2001,PJ,5097.0
-Australia,2002,PJ,5138.674
-Australia,2003,PJ,5284.727
-Australia,2004,PJ,5399.2
-Australia,2005,PJ,5546.742
-Australia,2006,PJ,5723.991
-Australia,2007,PJ,5738.33
-Australia,2008,PJ,5844.233
-Australia,2009,PJ,5823.803
-Australia,2010,PJ,5902.889
-Australia,2011,PJ,5888.427
-Australia,2012,PJ,5916.732
-Australia,2013,PJ,5870.951
-Australia,2014,PJ,5898.418
-Australia,2015,PJ,6034.872
-Australia,2016,PJ,6104.651
-Australia,2017,PJ,6168.093
-Australia,2018,PJ,6188.282
-Australia,2019,PJ,6001.048
-Australia,2020,PJ,5769.218
-Australia,2021,PJ,5765.137
-Australia,2022,PJ,5882.206
 New South Wales,2000,PJ,1450.5
 New South Wales,2001,PJ,1445.7
 New South Wales,2002,PJ,1510.475
@@ -68,7 +45,7 @@ Northern Territory,2019,PJ,146.499
 Northern Territory,2020,PJ,145.341
 Northern Territory,2021,PJ,149.773
 Northern Territory,2022,PJ,129.592
-Queensland,2000,PJ,1020.0
+Queensland,2000,PJ,1020
 Queensland,2001,PJ,1057.8
 Queensland,2002,PJ,1064.037
 Queensland,2003,PJ,1081.105
