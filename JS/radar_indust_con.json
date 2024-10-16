@@ -3,11 +3,11 @@
     "title": "Energy Production by Industry Over Years",
     "width": 660,
     "height": 660,
-    "padding" : 1,
+    "padding" : 0,
     "autosize": {"type": "none", "contains": "padding"},
   
     "signals": [
-      {"name": "radius", "update": "width * 0.6"},
+      {"name": "radius", "update": "width * 0.5"},
       {
         "name": "year_selection",
         "value": 2016,
