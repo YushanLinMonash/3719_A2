@@ -19,7 +19,7 @@
                 "title": "Year",
                 "labelAngle": -45
               },
-              "scale": {"domain": {"param": "brush"}}  // Filter based on brush
+              "scale": {"domain": {"param": "brush"}}
             },
             "y": {
               "field": "Quantity",
