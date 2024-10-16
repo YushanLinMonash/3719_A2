@@ -3,7 +3,7 @@
   "vconcat": [
     {
       "title": "Energy Consumption by State Over Time",
-      "width": "container",
+      "width": 600,
       "height": 240,
       "data": {
         "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
