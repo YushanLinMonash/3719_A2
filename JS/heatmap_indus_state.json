@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "width": 666,
-  "height": 666,
+  "width": 600,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/heat_Industry_state_TableE.csv",
     "format": {"type": "csv"}
