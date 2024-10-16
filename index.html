@@ -91,6 +91,11 @@
         margin: 0;
     }
 
+    .vertical-container {
+        display: block;
+        margin-bottom: 40px;
+    }
+
     h5 {
         font-size: 18px;
         color: #333;
@@ -122,7 +127,7 @@
           <div id="map"></div>
         </div>
         <div class="text-container">
-          <p>The data show Australia's energy consumption from 2000 to 2004, with a gradual increase over time. In 2000, the total consumption was 5011.8 PJ, rising to 5399.2 PJ by 2004. The highest growth occurred between 2002 and 2003, where consumption jumped from 5138.67 PJ to 5284.73 PJ.</p>
+          <p>The data show Australia's energy consumption from <strong>2000</strong> to <strong>2004</strong>, with a gradual increase over time. In <strong>2000</strong>, the total consumption was <strong>5011.8 PJ</strong>, rising to <strong>5399.2 PJ</strong> by <strong>2004</strong>. The highest growth occurred between <strong>2002</strong> and <strong>2003</strong>, where consumption jumped from <strong>5138.67 PJ</strong> to <strong>5284.73 PJ</strong>.</p>
         </div>
       </div>
 
@@ -135,7 +140,7 @@
           <div id="stacked_bar"></div>
         </div>
         <div class="text-container">
-          <p>This stacked bar chart displays  Australia's total energy consumption and derived production over time. In 2000, consumption was 22,676.9 PJ, and production was 3,395.7 PJ. This gap continued to widen in later years, with consumption growing to 23,746.23 PJ in 2002 while production slightly decreased.</p>
+          <p>This stacked bar chart displays Australia's total energy consumption and derived production over time. In <strong>2000</strong>, consumption was <strong>22,676.9 PJ</strong>, and production was <strong>3,395.7 PJ</strong>. This gap continued to widen in later years, with consumption growing to <strong>23,746.23 PJ</strong> in <strong>2002</strong> while production slightly decreased.</p>
         </div>
       </div>
 
@@ -148,7 +153,7 @@
           <div id="heat_map"></div>
         </div>
         <div class="text-container">
-          <p>The data show energy consumption across industries in Australia in 2000. Electricity generation consumed the most energy (1507.9 PJ), followed by manufacturing (1188.3 PJ). Agriculture and construction used significantly less, at 85.5 PJ and 28.2 PJ, respectively. Commercial services consumed 214.5 PJ, making it a moderate contributor.</p>
+          <p>The data show energy consumption across industries in Australia in <strong>2000</strong>. Electricity generation consumed the most energy (<strong>1507.9 PJ</strong>), followed by manufacturing (<strong>1188.3 PJ</strong>). Agriculture and construction used significantly less, at <strong>85.5 PJ</strong> and <strong>28.2 PJ</strong>, respectively. Commercial services consumed <strong>214.5 PJ</strong>, making it a moderate contributor.</p>
         </div>
       </div>
 
@@ -161,7 +166,7 @@
           <div id="radar_chart"></div>
         </div>
         <div class="text-container">
-          <p>The radar chart show electricity consumption by industry from 2016, with the electricity sector consuming the most (227,617.16 GWh), followed by mining (11,985.85 GWh). Manufacturing used 9,097.95 GWh, while other industries, grouped under "Other," consumed 9,316 GWh. The electricity sector remained dominant in 2017.</p>
+          <p>The radar chart shows electricity consumption by industry from <strong>2016</strong>, with the electricity sector consuming the most (<strong>227,617.16 GWh</strong>), followed by mining (<strong>11,985.85 GWh</strong>). Manufacturing used <strong>9,097.95 GWh</strong>, while other industries, grouped under "Other," consumed <strong>9,316 GWh</strong>. The electricity sector remained dominant in <strong>2017</strong>.</p>
         </div>
       </div>
 
@@ -174,7 +179,7 @@
           <div id="bubble_chart"></div>
         </div>
         <div class="text-container">
-          <p>This graph shows energy consumption per capita vs. GDP across Australian states. The bubble size represents population, and the color represents the state. It is interesting to see, it is likely to lower the consumption if GDP is higher in all state</p>
+          <p>This graph shows energy consumption per capita vs. GDP across Australian states. The bubble size represents population, and the color represents the state. It is interesting to see that it is likely to lower the consumption if GDP is higher in all states.</p>
         </div>
       </div>
 
@@ -187,20 +192,20 @@
           <div id="isotype_chart"></div>
         </div>
         <div class="text-container">
-          <p>The data show Australia's reliance on non-renewable energy, with 205,802 GWh generated from non-renewable sources in 2000, comprising 92% of the total. Renewable energy contributed 17,838 GWh, just 8% of total production. The proportion remained consistent in subsequent years, indicating a low growth rate for renewables.</p>
+          <p>The data show Australia's reliance on non-renewable energy, with <strong>205,802 GWh</strong> generated from non-renewable sources in <strong>2000</strong>, comprising <strong>92%</strong> of the total. Renewable energy contributed <strong>17,838 GWh</strong>, just <strong>8%</strong> of total production. The proportion remained consistent in subsequent years, indicating a low growth rate for renewables.</p>
         </div>
       </div>
 
-      <!-- Seventh Graph and Text Side by Side -->
-      <div class="chart-description-container">
+      <!-- Seventh Graph and Text (Vertical Layout) -->
+      <div class="vertical-container">
         <div class="chart-container">
           <div class="chart-title-box">
             <h4 class="chart-title">Comparison of Renewable and Non-Renewable Energy</h4>
           </div>
           <div id="concat_isotype"></div>
         </div>
-        <div class="text-container">
-          <p>The non-renewable energy is having less and less portion within the whole enery consumption, leading to more sustainable energy use.</p>
+        <div class="text-container" style="text-align: center;">
+          <p>The non-renewable energy is having less and less portion within the whole energy consumption, leading to more sustainable energy use.</p>
         </div>
       </div>
 
@@ -256,5 +261,7 @@
       // Access the Vega view instance
     }).catch(console.error);
   </script>
+</body>
+</html>
 </body>
 </html>
