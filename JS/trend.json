@@ -30,7 +30,7 @@
       }
     },
     {
-      "width": "container",
+      "width": 500,
       "height": 60,
       "data": {
         "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
