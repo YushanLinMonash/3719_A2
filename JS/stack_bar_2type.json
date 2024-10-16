@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/stack_EnergyContext_TableD.csv",
+    "format": {"type": "csv"}
+  },
+  "vconcat": [
+    {
+      "width": 500,
+      "height": 300,
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "axis": {
+                "title": "Year",
+                "labelAngle": -45
+              },
+              "scale": {"domain": {"param": "brush"}}  // Filter based on brush
+            },
+            "y": {
+              "field": "Quantity",
+              "type": "quantitative",
+              "aggregate": "sum",
+              "axis": {"title": "Total Energy (PJ)"}
+            },
+            "color": {
+              "field": "EnergyContext",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Consumption", "Derived Production"],
+                "range": ["#A1D99B", "#31A354"]
+              },
+              "legend": {"title": "Energy Context"}
+            },
+            "tooltip": [
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {"field": "EnergyContext", "type": "nominal", "title": "Context"},
+              {"field": "Quantity", "type": "quantitative", "title": "Energy (PJ)"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "aggregate": [{"op": "sum", "field": "Quantity", "as": "total_quantity"}],
+              "groupby": ["Year"]
+            }
+          ],
+          "mark": {"type": "line", "color": "black", "strokeWidth": 3},
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year",
+              "scale": {"domain": {"param": "brush"}}
+            },
+            "y": {"field": "total_quantity", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {"field": "total_quantity", "type": "quantitative", "title": "Total Energy (PJ)"}
+            ]
+          }
+        },
+        {
+          "mark": {"type": "circle", "size": 50, "color": "black"},
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal", "scale": {"domain": {"param": "brush"}}},
+            "y": {"aggregate": "sum", "field": "Quantity", "type": "quantitative"},
+            "tooltip": [
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {
+                "field": "Quantity",
+                "aggregate": "sum",
+                "type": "quantitative",
+                "title": "Total Energy (PJ)"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "dx": 25,
+            "dy": -10,
+            "fontSize": 10,
+            "angle": -45
+          },
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal", "scale": {"domain": {"param": "brush"}}},
+            "y": {"aggregate": "sum", "field": "Quantity", "type": "quantitative"},
+            "text": {
+              "aggregate": "sum",
+              "field": "Quantity",
+              "type": "quantitative",
+              "format": ".1f"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "fontSize": 12,
+            "color": "black"
+          },
+          "encoding": {
+            "text": {"value": "Line: Total Energy"},
+            "x": {"value": 600},
+            "y": {"value": 80}
+          }
+        }
+      ]
+    },
+    {
+      "width": 500,
+      "height": 60,
+      "mark": "area",
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"tickCount": 10}},
+        "y": {
+          "field": "Quantity",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "axis": {"tickCount": 3, "grid": false},
+          "title": "Total Energy (PJ)"
+        },
+        "color": {"value": "#A1D99B"}
+      }
+    }
+  ]
+}
