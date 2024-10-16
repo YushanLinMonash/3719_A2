@@ -1,30 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "width": "container",
-  "height": 300,
+  "width": 666,
+  "height": 666,
   "data": {
-    "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/iso_renew_TableOFY.csv",
+    "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/heat_Industry_state_TableE.csv",
     "format": {"type": "csv"}
   },
   "params": [
     {
-      "name": "jurisdiction_selection",
-      "value": "AUS",
-      "bind": {
-        "input": "select",
-        "options": [
-          "AUS", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"
-        ],
-        "name": "Select Jurisdiction: "
-      }
-    },
-    {
-      "name": "year_selection",
-      "value": 2008,
+      "name": "Year",
+      "value": 2000,
       "bind": {
         "input": "range",
-        "min": 2008,
+        "min": 2000,
         "max": 2022,
         "step": 1,
         "name": "Select Year: "
@@ -32,61 +21,64 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Jurisdiction == jurisdiction_selection"},
-    {"filter": "datum.Year == year_selection"},
-    {
-      "calculate": "datum.percentage", 
-      "as": "PercentageRounded"
-    },
-    {
-      "window": [
-        {"op": "sum", "field": "PercentageRounded", "as": "CumulativeProportion"}
-      ],
-      "groupby": ["Jurisdiction"],
-      "sort": [{"field": "Fuel", "order": "ascending"}]
-    },
-    {
-      "calculate": "datum.CumulativeProportion - datum.PercentageRounded", 
-      "as": "startPos"
-    },
-    {
-      "calculate": "sequence(datum.startPos, datum.CumulativeProportion)", 
-      "as": "positions"
-    },
-    {"flatten": ["positions"]},
-    {
-      "calculate": "ceil((datum.positions + 1) / 10)", 
-      "as": "row"
-    },
-    {
-      "calculate": "(datum.positions % 10) + 1", 
-      "as": "col"
-    }
+    {"filter": "datum.Year == Year"}
   ],
   "layer": [
     {
-      "mark": {"type": "point", "filled": true},
+      "mark": "rect",
       "encoding": {
-        "x": {"field": "col", "type": "ordinal", "axis": null},
-        "y": {"field": "row", "type": "ordinal", "axis": null, "sort": "descending"},
-        "shape": {
-          "value": "M4.35 0.02C4.45 0.07 4.52 0.18 4.5 0.29L4.05 3.00H6.25C6.34 3.00 6.43 3.05 6.47 3.14C6.52 3.22 6.51 3.32 6.45 3.40L3.45 7.40C3.38 7.49 3.26 7.53 3.15 7.48C3.05 7.43 2.98 7.32 3.00 7.21L3.45 4.50H1.25C1.16 4.50 1.07 4.45 1.03 4.36C0.98 4.28 0.99 4.18 1.05 4.10L4.05 0.10C4.12 0.01 4.24 -0.03 4.35 0.02ZM1.75 4.00H3.75C3.82 4.00 3.89 4.03 3.94 4.09C3.99 4.14 4.01 4.22 4.00 4.29L3.67 6.28L5.75 3.50H3.75C3.68 3.50 3.61 3.47 3.56 3.41C3.51 3.36 3.49 3.28 3.50 3.21L3.83 1.22L1.75 4.00Z"
+        "x": {
+          "field": "Jurisdiction",
+          "type": "nominal",
+          "axis": {
+            "title": "Jurisdiction",
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "Industry",
+          "type": "nominal",
+          "axis": {"title": "Industry"}
         },
         "color": {
-          "field": "Fuel",
-          "type": "nominal",
+          "field": "Quantity",
+          "type": "quantitative",
           "scale": {
-            "domain": ["Total non-renewable", "Total renewable"],
-            "range": ["#808080", "green"]
+            "scheme": "yellowgreen",
+            "domain": [0, 200, 400, 600, 800, 1000, 1500]
           },
-          "legend": {"title": "Fuel"}
+          "legend": {"title": "Energy Consumption (PJ)"}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "Jurisdiction",
+          "type": "nominal"
         },
-        "size": {"value": 100},
-        "tooltip": [
-          {"field": "Jurisdiction", "title": "Jurisdiction"},
-          {"field": "Fuel", "title": "Fuel"},
-          {"field": "percentage", "title": "Percentage", "type": "quantitative", "format": ".1%"}
-        ]
+        "y": {
+          "field": "Industry",
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Quantity",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum['Quantity'] > 500",
+            "value": "white"
+          },
+          "value": "black"
+        }
       }
     }
   ]
