@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": "Energy Production by Industry Over Years",
-    "width": "container",
-    "height": "container",
+    "width": 500,
+    "height": 500,
     "padding" : 50,
     "autosize": {"type": "none", "contains": "padding"},
   
