@@ -138,6 +138,7 @@
             <h4 class="chart-title">Electricity Energy Consumption by State</h4>
           </div>
           <div id="map"></div>
+          <div id="trend_chart"></div>
         </div>
         <div class="text-container">
           <p>The data show Australia's energy consumption from <strong>2000</strong> to <strong>2004</strong>, with a gradual increase over time. In <strong>2000</strong>, the total consumption was <strong>5011.8 PJ</strong>, rising to <strong>5399.2 PJ</strong> by <strong>2004</strong>. The highest growth occurred between <strong>2002</strong> and <strong>2003</strong>, where consumption jumped from <strong>5138.67 PJ</strong> to <strong>5284.73 PJ</strong>.</p>
@@ -235,6 +236,12 @@
     // First Graph (Map)
     var spec1 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/Map.json";
     vegaEmbed('#map', spec1, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Embed the trend chart (below the map)
+    var specTrend = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/trend.json";
+    vegaEmbed('#trend_chart', specTrend, { "actions": false }).then(function(result) {
       // Access the Vega view instance
     }).catch(console.error);
 
