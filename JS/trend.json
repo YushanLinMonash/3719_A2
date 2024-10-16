@@ -1,43 +1,66 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Energy Consumption by State Over Time",
-  "width": 800,
-  "height": 400,
-  "data": {
-    "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
-    "format": {"type": "csv"}
-  },
-  "params": [
+  "vconcat": [
     {
-      "name": "year_brush",  // The name of the brush parameter
-      "select": {
-        "type": "interval",  // Specifies that this is an interval selection
-        "encodings": ["x"]  // Apply the selection on the x-axis (Year)
+      "title": "Energy Consumption by State Over Time",
+      "width": "container",
+      "height": 240,
+      "data": {
+        "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}}, 
+          "axis": {"title": "Year", "tickCount": 10}
+        },
+        "y": {
+          "field": "Quantity",
+          "type": "quantitative",
+          "axis": {"title": "Energy Consumption (PJ)"}
+        },
+        "color": {
+          "field": "Jurisdiction",
+          "type": "nominal",
+          "legend": {"title": "State"}
+        }
+      }
+    },
+    {
+      "width": "container",
+      "height": 60,
+      "data": {
+        "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": "area",
+      "params": [
+        {
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]} 
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": {"tickCount": 10, "title": "Select Year Range"}
+        },
+        "y": {
+          "field": "Quantity",
+          "type": "quantitative",
+          "axis": {"tickCount": 3, "grid": false}
+        },
+        "color": {
+          "field": "Jurisdiction",
+          "type": "nominal",
+          "legend": null 
+        }
       }
     }
-  ],
-  "mark": "line",
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "axis": {"title": "Year"},
-      "scale": {"domain": {"param": "year_brush"}}  // Filter based on the brush
-    },
-    "y": {
-      "field": "Quantity",
-      "type": "quantitative",
-      "axis": {"title": "Energy Consumption (PJ)"}
-    },
-    "color": {
-      "field": "Jurisdiction",
-      "type": "nominal",
-      "legend": {"title": "State"}
-    },
-    "tooltip": [
-      {"field": "Jurisdiction", "type": "nominal", "title": "State"},
-      {"field": "Year", "type": "temporal", "title": "Year"},
-      {"field": "Quantity", "type": "quantitative", "title": "Energy Consumption (PJ)"}
-    ]
-  }
+  ]
 }
+
