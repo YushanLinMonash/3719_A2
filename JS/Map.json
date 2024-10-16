@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Energy Consumption by State over Time",
-  "width": 800,
-  "height": 400,
+  "width": 1000,
+  "height": 1400,
   "projection": {"type": "mercator"},
   "data": {
     "url": "https://raw.githubusercontent.com/YushanLinMonash/3179_W9HW/refs/heads/main/js/ne_110m_au.json",
@@ -37,22 +37,43 @@
       }
     }
   ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "black",
-    "strokeWidth": 0.5
-  },
-  "encoding": {
-    "color": {
-      "field": "Quantity",
-      "type": "quantitative",
-      "scale": {"type": "linear", "domain": [0, 7000]},
-      "title": "Energy Consumption (PJ)"
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "geoshape",
+            "stroke": "black",
+            "strokeWidth": 0.5
+          },
+          "encoding": {
+            "color": {
+              "field": "Quantity",
+              "type": "quantitative",
+              "scale": {
+                "type": "linear",
+                "domain": [50, 2200],
+                "range": ["#f7fcb9", "#addd8e", "#a37731"]
+              },
+              "title": "Energy Consumption (PJ)"
+            },
+            "tooltip": [
+              {"field": "properties.name", "type": "nominal", "title": "State"},
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {"field": "Quantity", "type": "quantitative", "title": "Energy Consumption (PJ)"}
+            ]
+          }
+        }
+      ]
     },
-    "tooltip": [
-      {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "Quantity", "type": "quantitative", "title": "Energy Consumption (PJ)"}
-    ]
-  }
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "properties.name", "type": "nominal"},
+        "y": {"field": "properties.name", "type": "nominal", "axis": {"title": "State"}},
+        "x": {"value": 25},  
+        "text": {"field": "Quantity", "type": "quantitative"}
+      }
+    }
+  ]
 }
