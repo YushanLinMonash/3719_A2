@@ -104,31 +104,67 @@
       <h1>Australia Energy Consumption</h1>
       <h3>Visual analysis of energy consumption and related economic data in Australia</h3>
 
-      <!-- First Graph -->
+      <!-- First Graph (Map) -->
       <div class="chart-container">
         <div class="chart-title-box">
           <h4 class="chart-title">Electricity Income by State</h4>
         </div>
-        <div id="choropleth_map"></div>
+        <div id="map"></div>
         <p class="body">The map visualizes electricity income by state in Australia, with a color scale representing the income levels. States with higher income are darker.</p>
       </div>
-      
-      <!-- Second Graph -->
+
+      <!-- Second Graph (Stacked Bar) -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4 class="chart-title">Energy Consumption by Type</h4>
+        </div>
+        <div id="stacked_bar"></div>
+        <p class="body">This stacked bar chart displays the breakdown of energy consumption by different types of energy sources.</p>
+      </div>
+
+      <!-- Third Graph (Heat Map) -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4 class="chart-title">Energy Consumption by Industry and State</h4>
+        </div>
+        <div id="heat_map"></div>
+        <p class="body">This heat map shows the energy consumption by different industries across various states in Australia.</p>
+      </div>
+
+      <!-- Fourth Graph (Radar Chart) -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4 class="chart-title">Energy Consumption Comparison by Industry</h4>
+        </div>
+        <div id="radar_chart"></div>
+        <p class="body">The radar chart compares energy consumption across industries in Australia.</p>
+      </div>
+
+      <!-- Fifth Graph (Bubble Chart) -->
       <div class="chart-container">
         <div class="chart-title-box">
           <h4 class="chart-title">Energy Consumption vs GDP</h4>
         </div>
-        <div id="bubbleplot1"></div>
+        <div id="bubble_chart"></div>
         <p class="body">This graph shows energy consumption per capita vs. GDP across Australian states. The bubble size represents population, and the color represents the state.</p>
       </div>
 
-      <!-- Third Graph -->
+      <!-- Sixth Graph (Isotype Chart) -->
       <div class="chart-container">
         <div class="chart-title-box">
-          <h4 class="chart-title">Top 10 Countries with the most CO2 Emissions in 2019</h4>
+          <h4 class="chart-title">Renewable Energy Isotype</h4>
         </div>
-        <div id="bubbleplot2"></div>
-        <p class="body">This bubble plot provides additional insights into energy consumption data.</p>
+        <div id="isotype_chart"></div>
+        <p class="body">This isotype chart visualizes the use of renewable energy in Australia.</p>
+      </div>
+
+      <!-- Seventh Graph (Concatenation of Isotype) -->
+      <div class="chart-container">
+        <div class="chart-title-box">
+          <h4 class="chart-title">Comparison of Renewable and Non-Renewable Energy</h4>
+        </div>
+        <div id="concat_isotype"></div>
+        <p class="body">This chart compares the usage of renewable vs. non-renewable energy sources in Australia using concatenated isotype representations.</p>
       </div>
 
       <!-- References Section -->
@@ -143,20 +179,44 @@
   
   <script type="text/javascript">
     // First Graph (Map)
-    var spec1 = "https://raw.githubusercontent.com/YushanLinMonash/3179_A2_critique/refs/heads/main/Map.json";
-    vegaEmbed('#choropleth_map', spec1, { "actions": false }).then(function(result) {
+    var spec1 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/Map.json";
+    vegaEmbed('#map', spec1, { "actions": false }).then(function(result) {
       // Access the Vega view instance
     }).catch(console.error);
 
-    // Second Graph (Bubble Chart)
-    var spec2 = "https://raw.githubusercontent.com/YushanLinMonash/3179_A2_critique/refs/heads/main/Bubble_ComGDP.json";
-    vegaEmbed('#bubbleplot1', spec2, { "actions": false }).then(function(result) {
+    // Second Graph (Stacked Bar Chart)
+    var spec2 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/stack_bar_2type.json";
+    vegaEmbed('#stacked_bar', spec2, { "actions": false }).then(function(result) {
       // Access the Vega view instance
     }).catch(console.error);
 
-    // Third Graph (Bubble Plot)
-    var spec3 = "https://raw.githubusercontent.com/30374669/FIT3179A2/refs/heads/main/js/bubbleplot.vg.json";
-    vegaEmbed('#bubbleplot2', spec3, { "actions": false }).then(function(result) {
+    // Third Graph (Heat Map)
+    var spec3 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/heatmap_indus_state.json";
+    vegaEmbed('#heat_map', spec3, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Fourth Graph (Radar Chart)
+    var spec4 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/radar_indust_con.json";
+    vegaEmbed('#radar_chart', spec4, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Fifth Graph (Bubble Chart)
+    var spec5 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/Bubble_ComGDP.json";
+    vegaEmbed('#bubble_chart', spec5, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Sixth Graph (Isotype Chart)
+    var spec6 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/iso_renew.json";
+    vegaEmbed('#isotype_chart', spec6, { "actions": false }).then(function(result) {
+      // Access the Vega view instance
+    }).catch(console.error);
+
+    // Seventh Graph (Concatenation of Isotype)
+    var spec7 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/iso_concate.json";
+    vegaEmbed('#concat_isotype', spec7, { "actions": false }).then(function(result) {
       // Access the Vega view instance
     }).catch(console.error);
   </script>
