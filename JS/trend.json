@@ -7,12 +7,22 @@
     "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
     "format": {"type": "csv"}
   },
+  "params": [
+    {
+      "name": "year_brush",  // The name of the brush parameter
+      "select": {
+        "type": "interval",  // Specifies that this is an interval selection
+        "encodings": ["x"]  // Apply the selection on the x-axis (Year)
+      }
+    }
+  ],
   "mark": "line",
   "encoding": {
     "x": {
       "field": "Year",
       "type": "temporal",
-      "axis": {"title": "Year"}
+      "axis": {"title": "Year"},
+      "scale": {"domain": {"param": "year_brush"}}  // Filter based on the brush
     },
     "y": {
       "field": "Quantity",
