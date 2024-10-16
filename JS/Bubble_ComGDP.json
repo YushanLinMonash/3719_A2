@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bubble chart showing energy consumption per capita vs GDP, excluding AUS, with bubble size representing population and color representing jurisdiction.",
-  "width": 800,
+  "width": 600,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/YushanLinMonash/3179_W9HW/refs/heads/main/data/Filtered_Energy_Statistics.csv",
