@@ -53,13 +53,13 @@
       "field": "Energy consumption per capita",
       "type": "quantitative",
       "title": "Energy Consumption per Capita (GJ/person)",
-      "scale": {"domain": [0, 600]}
+      "scale": {"domain": [0, 460]}
     },
     "y": {
       "field": "GDP",
       "type": "quantitative",
       "title": "GDP ($ million)",
-      "scale": {"domain": [0, 850000]}
+      "scale": {"domain": [0, 650000]}
     },
     "size": {
       "field": "Population",
