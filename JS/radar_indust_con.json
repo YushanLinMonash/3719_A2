@@ -1,13 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": "Energy Production by Industry Over Years",
-    "width": 600,
-    "height": 600,
-    "padding" : 8,
+    "width": 660,
+    "height": 660,
+    "padding" : 1,
     "autosize": {"type": "none", "contains": "padding"},
   
     "signals": [
-      {"name": "radius", "update": "width * 0.8"},
+      {"name": "radius", "update": "width * 0.6"},
       {
         "name": "year_selection",
         "value": 2016,
