@@ -51,13 +51,29 @@
         margin-bottom: 30px;
     }
 
+    /* Container for visualization and text, set to horizontal layout */
+    .chart-text-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
     .chart-container {
-        width: 100%;
-        margin-bottom: 40px;
+        flex: 1; /* Chart takes up equal space */
         background-color: white;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         padding: 20px;
+    }
+
+    .text-container {
+        flex: 1; /* Text takes up equal space */
+        font-size: 18px;
+        color: #555;
+        text-align: justify;
+        line-height: 1.6;
     }
 
     .chart-title-box {
@@ -72,14 +88,6 @@
         font-size: 22px;
         font-weight: 600;
         margin: 0;
-    }
-
-    p.body {
-        font-size: 18px;
-        color: #555;
-        text-align: justify;
-        line-height: 1.6;
-        padding: 20px;
     }
 
     h5 {
@@ -104,72 +112,38 @@
       <h1>Australia Energy Consumption</h1>
       <h3>Visual analysis of energy consumption and related economic data in Australia</h3>
 
-      <!-- First Graph (Map) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Electricity Energy Consumption by State</h4>
+      <!-- First Visualization and Text Side by Side -->
+      <div class="chart-text-container">
+        <div class="chart-container">
+          <div class="chart-title-box">
+            <h4 class="chart-title">Electricity Income by State</h4>
+          </div>
+          <div id="map"></div>
         </div>
-        <div id="map"></div>
-        <p class="body">The map visualizes electricity Energy Consumption by state in Australia, with a color scale representing the Energy Consumption levels. States with higher Energy Consumption are darker.</p>
+        <div class="text-container">
+          <p>The map visualizes electricity income by state in Australia, with a color scale representing the income levels. States with higher income are darker.</p>
+        </div>
       </div>
 
-      <!-- Second Graph (Stacked Bar) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Energy Consumption by Type</h4>
+      <!-- Second Visualization and Text Side by Side -->
+      <div class="chart-text-container">
+        <div class="chart-container">
+          <div class="chart-title-box">
+            <h4 class="chart-title">Energy Consumption by Type</h4>
+          </div>
+          <div id="stacked_bar"></div>
         </div>
-        <div id="stacked_bar"></div>
-        <p class="body">This stacked bar chart displays the breakdown of energy consumption by different types of energy sources.</p>
+        <div class="text-container">
+          <p>This stacked bar chart displays the breakdown of energy consumption by different types of energy sources.</p>
+        </div>
       </div>
 
-      <!-- Third Graph (Heat Map) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Energy Consumption by Industry and State</h4>
-        </div>
-        <div id="heat_map"></div>
-        <p class="body">This heat map shows the energy consumption by different industries across various states in Australia.</p>
-      </div>
-
-      <!-- Fourth Graph (Radar Chart) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Energy Consumption Comparison by Industry</h4>
-        </div>
-        <div id="radar_chart"></div>
-        <p class="body">The radar chart compares energy consumption across industries in Australia.</p>
-      </div>
-
-      <!-- Fifth Graph (Bubble Chart) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Energy Consumption vs GDP</h4>
-        </div>
-        <div id="bubble_chart"></div>
-        <p class="body">This graph shows energy consumption per capita vs. GDP across Australian states. The bubble size represents population, and the color represents the state.</p>
-      </div>
-
-      <!-- Sixth Graph (Isotype Chart) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Renewable Energy Isotype</h4>
-        </div>
-        <div id="isotype_chart"></div>
-        <p class="body">This isotype chart visualizes the use of renewable energy in Australia.</p>
-      </div>
-
-      <!-- Seventh Graph (Concatenation of Isotype) -->
-      <div class="chart-container">
-        <div class="chart-title-box">
-          <h4 class="chart-title">Comparison of Renewable and Non-Renewable Energy</h4>
-        </div>
-        <div id="concat_isotype"></div>
-        <p class="body">This chart compares the usage of renewable vs. non-renewable energy sources in Australia using concatenated isotype representations.</p>
-      </div>
+      <!-- More Visualization-Text Pairs Can Go Here -->
 
       <!-- References Section -->
       <h5>References:</h5>
       <p>
+        <a href="https://www.eia.gov/todayinenergy/detail.php?id=53959#:~:text=China%20has%20steadily%20increased%20its">China increased electricity generation annually from 2000 to 2020</a><br>
         <a href="https://www.energy.gov.au/publications/australian-energy-update-2024">Australian Energy Update 2024, Publisher Department of Climate Change, Energy, the Environment and Water Date RELEASEDWednesday 28 August 2024</a><br>
       </p>
 
@@ -189,35 +163,6 @@
       // Access the Vega view instance
     }).catch(console.error);
 
-    // Third Graph (Heat Map)
-    var spec3 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/heatmap_indus_state.json";
-    vegaEmbed('#heat_map', spec3, { "actions": false }).then(function(result) {
-      // Access the Vega view instance
-    }).catch(console.error);
-
-    // Fourth Graph (Radar Chart)
-    var spec4 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/radar_indust_con.json";
-    vegaEmbed('#radar_chart', spec4, { "actions": false }).then(function(result) {
-      // Access the Vega view instance
-    }).catch(console.error);
-
-    // Fifth Graph (Bubble Chart)
-    var spec5 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/Bubble_ComGDP.json";
-    vegaEmbed('#bubble_chart', spec5, { "actions": false }).then(function(result) {
-      // Access the Vega view instance
-    }).catch(console.error);
-
-    // Sixth Graph (Isotype Chart)
-    var spec6 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/iso_renew.json";
-    vegaEmbed('#isotype_chart', spec6, { "actions": false }).then(function(result) {
-      // Access the Vega view instance
-    }).catch(console.error);
-
-    // Seventh Graph (Concatenation of Isotype)
-    var spec7 = "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/JS/iso_concate.json";
-    vegaEmbed('#concat_isotype', spec7, { "actions": false }).then(function(result) {
-      // Access the Vega view instance
-    }).catch(console.error);
   </script>
 </body>
 </html>
