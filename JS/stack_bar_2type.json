@@ -32,7 +32,7 @@
               "type": "nominal",
               "scale": {
                 "domain": ["Consumption", "Derived Production"],
-                "range": ["#A1D99B", "#31A354"]
+                "range": ["#6e5a37", "#b1d47d"]
               },
               "legend": {"title": "Energy Context"}
             },
