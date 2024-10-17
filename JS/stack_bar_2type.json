@@ -50,7 +50,7 @@
               "groupby": ["Year"]
             }
           ],
-          "mark": {"type": "line", "color": "black", "strokeWidth": 3},
+          "mark": {"type": "line", "color": "Red", "strokeWidth": 3},
           "encoding": {
             "x": {
               "field": "Year",
@@ -66,7 +66,7 @@
           }
         },
         {
-          "mark": {"type": "circle", "size": 50, "color": "black"},
+          "mark": {"type": "circle", "size": 50, "color": "red"},
           "encoding": {
             "x": {"field": "Year", "type": "ordinal", "scale": {"domain": {"param": "brush"}}},
             "y": {"aggregate": "sum", "field": "Quantity", "type": "quantitative"},
@@ -108,7 +108,7 @@
             "type": "text",
             "align": "right",
             "fontSize": 12,
-            "color": "black"
+            "color": "red"
           },
           "encoding": {
             "text": {"value": "Line: Total Energy"},
