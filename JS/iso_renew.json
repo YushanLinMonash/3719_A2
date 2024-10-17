@@ -85,7 +85,7 @@
         "tooltip": [
           {"field": "Jurisdiction", "title": "Jurisdiction"},
           {"field": "Fuel", "title": "Fuel"},
-          {"field": "percentage", "title": "Percentage", "type": "quantitative", "format": ".1%"}
+          {"field": "PercentageRounded", "title": "Percentage", "type": "quantitative", "format": ".1f"}
         ]
       }
     }
