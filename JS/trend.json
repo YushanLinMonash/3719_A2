@@ -9,7 +9,7 @@
         "url": "https://raw.githubusercontent.com/YushanLinMonash/3719_A2/refs/heads/main/DATA/geo_consumption_state_year_TableC.csv",
         "format": {"type": "csv"}
       },
-      "mark": "line",
+      "mark": {"type": "area", "line": true, "opacity": 0.7},
       "encoding": {
         "x": {
           "field": "Year",
@@ -20,13 +20,19 @@
         "y": {
           "field": "Quantity",
           "type": "quantitative",
+          "stack": "zero",
           "axis": {"title": "Energy Consumption (PJ)"}
         },
         "color": {
           "field": "Jurisdiction",
           "type": "nominal",
           "legend": {"title": "State"}
-        }
+        },
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "title": "Year"},
+          {"field": "Quantity", "type": "quantitative", "title": "Energy Consumption (PJ)"},
+          {"field": "Jurisdiction", "type": "nominal", "title": "State"}
+        ]
       }
     },
     {
@@ -63,4 +69,3 @@
     }
   ]
 }
-
