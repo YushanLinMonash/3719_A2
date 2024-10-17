@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Energy Consumption by State over Time",
+  "title": "Energy Consumption by State over Time (2022)",
   "width": 600,
   "height": 400,
   "projection": {"type": "mercator"},
@@ -21,20 +21,7 @@
       }
     },
     {
-      "filter": "datum.Year == year_brush"
-    }
-  ],
-  "params": [
-    {
-      "name": "year_brush",
-      "value": 2022, 
-      "bind": {
-        "input": "range",
-        "min": 2000,
-        "max": 2022,
-        "step": 1, 
-        "name": "Select Year: " 
-      }
+      "filter": "datum.Year == 2022"
     }
   ],
   "mark": {
